@@ -4,10 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="resources\css\style.css">
-    <script src="resources\js\main.js"></script>
+    <script type="module" src="resources/js/main.js"></script>
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="container">
+        <h2>Firebase Login</h2>
+        <form id="signupForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+
+            <label for="username">User name:</label>
+            <input type="username" id="username" required>
+
+            <button type="submit">Sign UP</button>
+        </form>
+        <p id="errorMessage"></p>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-analytics.js"></script>
 </body>
 </html>
