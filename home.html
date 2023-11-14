@@ -1,11 +1,759 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- <link rel="stylesheet" href="resources\css\home.css">
+    <script type="module" src="resources\js\login.js"></script> -->
+	<script>
+		alert("called");
+		document.getElementById("scrollButton").addEventListener("click", function () {
+			const section2 = document.getElementById("section2");
+			section2.style.display = "block";
+
+			// Scroll smoothly to Section 2
+			window.scrollTo({
+				top: section2.offsetTop,
+				behavior: "smooth"
+			});
+		});
+
+
+
+		window.addEventListener('load', function () {
+
+			let selectForm = document.querySelector('#search-form');
+
+			document.querySelector('#search').onclick = () => {
+				selectForm.classList.toggle('active');
+				selectCart.classList.remove('active');
+				login.classList.remove('active');
+				navbar.classList.remove('active');
+			}
+
+
+
+
+			let selectCart = document.querySelector('.shopping-cart');
+
+			document.querySelector('#cart').onclick = () => {
+				selectCart.classList.toggle('active');
+				selectForm.classList.remove('active');
+				login.classList.remove('active');
+				navbar.classList.remove('active');
+			}
+
+
+
+
+			let login = document.querySelector('.profile');
+
+			document.querySelector('#user').onclick = () => {
+				login.classList.toggle('active');
+				selectForm.classList.remove('active');
+				selectCart.classList.remove('active');
+				navbar.classList.remove('active');
+			}
+
+
+
+
+			let navbar = document.querySelector('.navbar');
+
+			document.querySelector('#bar').onclick = () => {
+				navbar.classList.toggle('active');
+				selectForm.classList.remove('active');
+				selectCart.classList.remove('active');
+				login.classList.remove('active');
+			}
+
+
+
+			window.onscroll = () => {
+				selectForm.classList.remove('active');
+				selectCart.classList.remove('active');
+				login.classList.remove('active');
+				navbar.classList.remove('active');
+			}
+		});
+	</script>
+
+<!-- <body>
+    <div class="navbar">
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Add Product</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+        <div class="logo">Your Logo</div>
+        <div class="cart">&#128722;</div>
+    </div>
+    <section id="section1">
+        <div style="margin-left: 50px;">
+            <h1>
+                Your One-Stop Destination for Unbeatable Finds 
+            </h1>
+            <p style="max-width: 600px;">
+                Welcome to [Your Brand], where exceptional meets convenience. Explore a curated selection of the latest trends, premium quality products, and exclusive deals. Whether you're searching for fashion essentials, home upgrades, or tech innovations, we've got you covered. Elevate your shopping experience with us and uncover a world of possibilities. Start browsing and find precisely what you need. Your next great discovery awaits with just a click. Shop now and unlock a universe of extraordinary finds. 
+            </p>
+            <button  id="scrollButton" class="button">
+                Shop now
+                <svg class="cartIcon" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path></svg>
+               </button>
+        </div>
+        <div>
+            <img src="https://img.freepik.com/free-vector/social-media-marketing-mobile-phone-concept_23-2148431745.jpg?w=740&t=st=1699437451~exp=1699438051~hmac=2b73e332607d034fd3b4bb7d0a6035e2e795ee3f776f8c0c9cf0305a48313928" alt="" style="height: 650px; margin-left: 300px;">
+        </div>
+    </section>
+    <section id="section2">
+        <div style="align-items: center;">
+            <h1>Welcome</h1>
+            <div class="line"></div>
+        </div>
+        <div style="display: flex; margin-left: 50px; margin-top: 30px; justify-content: center;">
+           <a href="https://www.w3schools.com/css/css_colors_hex.asp">
+            <div class="card">
+                <div class="image"><span class="text">This is a chair.</span></div>
+                  <span class="title">Cool Chair</span>
+                  <span class="price">$100</span>
+                </div>
+            </a> 
+        </div>
+    </section>
+
+</body> -->
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+	:root {
+		--box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+		--border: 1rem solid rgba(0, 0, 0, 0.1);
+		--outline: 1rem solid rgba(0, 0, 0, 0.1);
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+		font-family: 'Poppins', sans-serif;
+		box-sizing: border-box;
+		outline: none;
+		border: none;
+		text-decoration: none;
+		transition: all .2s linear;
+	}
+
+	html {
+		font-size: 62.5%;
+		overflow-x: hidden;
+		scroll-behavior: smooth;
+		scroll-padding-top: 7rem;
+	}
+
+	body {
+		background: #eee;
+	}
+
+	section {
+		width: 100%;
+
+	}
+
+	header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 2rem 9%;
+		background: #fff;
+		box-shadow: var(--box-shadow);
+	}
+
+	.logo {
+		font-size: 2.5rem;
+		font-weight: bolder;
+	}
+
+	.logo i {
+		color: black;
+	}
+
+	.navbar a {
+		font-size: 1.7rem;
+		color: #494F43;
+		margin: 0 1rem;
+	}
+
+	.navbar a:hover {
+		color: black;
+	}
+
+	.navbar.active {
+		right: 2rem;
+	}
+
+	.icons i {
+		height: 4.5rem;
+		width: 4.5rem;
+		line-height: 4.5rem;
+		border-radius: 0.5rem;
+		background: #eee;
+		color: black;
+		font-size: 2rem;
+		margin-left: 0.3rem;
+		text-align: center;
+		cursor: pointer;
+	}
+
+	.icons i:hover {
+		background: black;
+		color: white;
+	}
+
+	#bar {
+		display: none;
+	}
+
+	#search-form {
+		position: absolute;
+		top: 110%;
+		right: -110%;
+		width: 50rem;
+		height: 5rem;
+		background: white;
+		border-radius: 0.5rem;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		box-shadow: var(--box-shadow);
+	}
+
+	#search-form.active {
+		right: 2rem;
+	}
+
+	#search-form input {
+		height: 100%;
+		width: 100%;
+		background: none;
+		text-transform: none;
+		font-size: 1.6rem;
+		color: black;
+		padding: 0 1.5rem;
+	}
+
+	#search-form label {
+		font-size: 3rem;
+		padding-right: 1.5rem;
+		margin-right: 1.5rem;
+		text-align: center;
+		color: black;
+		border-radius: 20px;
+		cursor: pointer;
+	}
+
+	#search-form label:hover {
+		background: black;
+		color: white;
+	}
+
+	.shopping-cart {
+		position: absolute;
+		top: 110%;
+		right: -110%;
+		padding: 1rem;
+		border-radius: 0.5rem;
+		box-shadow: var(--box-shadow);
+		width: 35rem;
+		background: white;
+	}
+
+	.box {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		position: relative;
+		margin: 1rem 0;
+	}
+
+	.box img {
+		height: 10rem;
+		width: 10rem;
+	}
+
+	.box .fa-trash {
+		font-size: 2rem;
+		position: absolute;
+		top: 50%;
+		right: 2rem;
+		cursor: pointer;
+		transform: translateY(-50%);
+		color: grey;
+	}
+
+	.box .fa-trash:hover {
+		color: black;
+	}
+
+	.box .content h3 {
+		font-size: 1.7rem;
+		margin-left: 0.5rem;
+		padding-bottom: 1rem;
+	}
+
+	.box .content span {
+		color: grey;
+		font-size: 1.6rem;
+	}
+
+	.box .content quantity {
+		padding-left: 1rem;
+	}
+
+	.total {
+		font-size: 2.5rem;
+		padding: 1rem 0;
+		text-align: center;
+	}
+
+	.check {
+		margin: 1rem;
+		display: inline-block;
+		padding: 0.8rem 3rem;
+		font-size: 1.7rem;
+		border-radius: 0.5rem;
+		box-shadow: var(--box-shadow);
+		color: black;
+		cursor: pointer;
+		display: block;
+		text-align: center;
+	}
+
+	.check:hover {
+		background: black;
+		color: white;
+	}
+
+	.shopping-cart.active {
+		right: 2rem;
+	}
+
+	.profile {
+		position: absolute;
+		top: 110%;
+		right: -110%;
+		padding: 1rem;
+		border-radius: 0.5rem;
+		box-shadow: var(--box-shadow);
+		width: 25rem;
+		background: white;
+	}
+
+	.profile.active {
+		right: 2rem;
+	}
+
+	.profile h3 {
+		font-size: 2rem;
+		margin-left: 0.5rem;
+		padding-bottom: 1rem;
+		text-align: center;
+	}
+
+	.profile input {
+		height: 3rem;
+		width: 100%;
+		margin-top: 1.5rem;
+		background: none;
+		text-transform: none;
+		font-size: 1.6rem;
+		color: black;
+		padding: 0 1.5rem;
+		box-shadow: var(--box-shadow);
+	}
+
+	.log {
+		display: block;
+		align-items: center;
+		justify-content: center;
+		margin: 1rem;
+		padding: 0.8rem 3rem;
+		font-size: 1.7rem;
+		border-radius: 0.5rem;
+		box-shadow: var(--box-shadow);
+		color: black;
+		cursor: pointer;
+	}
+
+	.log:hover {
+		background: black;
+		color: white;
+	}
+
+	.pass {
+		margin-top: 1rem;
+	}
+
+	.profile p {
+		font-size: 1.4rem;
+		text-align: center;
+		margin-top: 1rem;
+		color: grey;
+	}
+
+	.profile a {
+		text-decoration: none;
+		color: blue;
+	}
+
+	.home {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: url("Images/Background.jpg");
+		padding-top: 17rem;
+		padding-bottom: 10rem;
+	}
+
+	.content {
+		font-size: 4rem;
+		font-weight: 1rem;
+		color: white;
+		text-align: center;
+	}
+
+	.shop {
+		align-items: center;
+		justify-content: center;
+		background: white;
+		margin: 1rem;
+		padding: 0.8rem 3rem;
+		font-size: 1.7rem;
+		border-radius: 0.5rem;
+		box-shadow: var(--box-shadow);
+		color: black;
+		cursor: pointer;
+	}
+
+	.shop:hover {
+		background: black;
+		color: white;
+	}
+
+	.features {
+		font-size: 3rem;
+		font-weight: 2rem;
+		text-align: center;
+		color: black;
+		padding: 2rem 0;
+		width: 100%;
+		background: #9F9F9F;
+		margin-top: 5rem;
+	}
+
+	.feature-box img {
+		height: 20rem;
+		width: 20rem;
+		align: center;
+		margin: 15%;
+		border-radius: 0.5rem;
+		box-shadow: var(--box-shadow);
+	}
+
+	.feature-box {
+		height: 50rem;
+		width: 30rem;
+		border-radius: 0.5rem;
+		box-shadow: var(--box-shadow);
+		background: white;
+
+	}
+
+	.feature-content h3 {
+		font-size: 2rem;
+		font-weight: 1.2rem;
+		padding: 1rem 0;
+	}
+
+	.feature-content p {
+		font-size: 1.2rem;
+		font-weight: 1rem;
+		padding: 1rem 0;
+	}
+
+	.feature-content {
+		text-align: center;
+		display: block;
+		align-items: center;
+		margin-top: 4rem;
+	}
+
+	.feature-section {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 2rem 3rem;
+		gap: 5rem;
+	}
+
+	.category {
+		font-size: 3rem;
+		font-weight: 2rem;
+		text-align: center;
+		color: black;
+		padding: 2rem 0;
+		width: 100%;
+		background: #9F9F9F;
+		margin-top: 5rem;
+	}
+
+	.categories {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		padding: 20px;
+		align-items: center;
+	}
+
+	.product {
+		width: calc(33.33% - 20px);
+		margin-bottom: 20px;
+		box-sizing: border-box;
+		background: white;
+		border-radius: 0.5rem;
+		box-shadow: var(--box-shadow);
+	}
+
+	.product img {
+		height: 20rem;
+		width: 20rem;
+		margin: 0 8rem;
+	}
+
+	.product p {
+		font-size: 1.5rem;
+		font-weight: 1rem;
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	@media (max-width:991px) {
+		html {
+			font-size: 55%;
+		}
+
+		header {
+			padding: 2rem;
+		}
+
+		section {
+			padding: 2rem;
+		}
+	}
+
+	@media (max-width:768px) {
+		.navbar {
+			position: absolute;
+			top: 110%;
+			right: -110%;
+			width: 30rem;
+			box-shadow: var(--box-shadow);
+			border-radius: 0.5rem;
+			background: white;
+		}
+
+		.navbar a {
+			font-size: 2rem;
+			margin: 2rem 2.5rem;
+			display: block;
+		}
+
+		#bar {
+			display: inline-block;
+		}
+
+		#search-form {
+			width: 40rem;
+		}
+
+		.home {
+			width: 100%;
+
+		}
+
+		.feature-section {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.categories {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+		}
+
+		.product {
+			height: 40rem;
+			width: 30rem;
+		}
+
+		.product p {
+			top: 40%;
+			bottom: 1rem;
+			font-size: 2.5rem;
+			font-weight: 1.7rem;
+		}
+
+		.product img {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			top: 20%;
+			right: 10%;
+		}
+
+	}
+
+	@media (max-width:450px) {
+		html {
+			font-size: 50%;
+		}
+	}
+</style>
 </head>
 <body>
-    <h1>Welcome home</h1>
+	<header>
+		<a href="#home" class="logo"><i class="fa fa-home" aria-hidden="true"></i>SPICES</a>
+		<nav class="navbar">
+			<a href="#home">Home</a>
+			<a href="#feature">Features</a>
+			<a href="#category">Categories</a>
+			<a href="">Products</a>
+		</nav>
+		<div class="icons">
+			<i class="fa fa-bars" aria-hidden="true" id="bar"></i>
+			<i id="search" class="fa fa-search" aria-hidden="true"></i>
+			<i class="fa fa-shopping-cart" aria-hidden="true" id="cart"></i>
+			<i class="fa fa-user" aria-hidden="true" id="user"></i>
+		</div>
+		<form id="search-form">
+			<input type="search" id="search-box" placeholder="Search Here...">
+			<label for="search-box" class="fa fa-search"></label>
+		</form>
+		<div class="shopping-cart">
+			<div class="box">
+				<i class="fa fa-trash"></i>
+				<img src="Images/Salem-turmeric.png" alt="salemturmeric">
+				<div class="content">
+					<h3>Salem Turmeric<h3>
+							<span class="price"><i class="fa fa-inr"></i>189</span>
+							<span class="quantity">Qty:1 kg</span>
+				</div>
+			</div>
+			<div class="box">
+				<i class="fa fa-trash"></i>
+				<img src="Images/Malabar-pepper.jpg" alt="malabarpepper">
+				<div class="content">
+					<h3>Malabar Pepper<h3>
+							<span class="price"><i class="fa fa-inr"></i>520</span>
+							<span class="quantity">Qty:1 kg</span>
+				</div>
+			</div>
+			<div class="box">
+				<i class="fa fa-trash"></i>
+				<img src="Images/Cassia.jpg" alt="cassia">
+				<div class="content">
+					<h3>Cassia<h3>
+							<span class="price"><i class="fa fa-inr"></i>475</span>
+							<span class="quantity">Qty:1 kg</span>
+				</div>
+			</div>
+			<div class="total">Total:<i class="fa fa-inr"></i>1184</div>
+			<a href="" class="check">Checkout</a>
+		</div>
+		<form action="" class="profile">
+			<h3>Login Now</h3>
+			<input type="email" placeholder="E-mail address">
+			<input type="password" placeholder="Password" class="pass">
+			<p>Forgot your password?<a href="">click here</a></p>
+			<p>Don't have an account?<a href="">Sign in</a></p>
+			<button class="log">Login Now</button>
+		</form>
+	</header>
+	<section class="home" id="home">
+		<div class="content">
+			<h2>Spice up your life with our exotic flavors!</h2>
+			<a id="scrollButton" href="" class="shop">Shop Now</a>
+		</div>
+	</section>
+	<section id="section2">
+
+		<div class=features>
+			Our Features
+		</div>
+		<div class="feature-section">
+			<div class="feature-box">
+				<img src="Images/Feature1.jpg" alt="spices">
+				<div class="feature-content">
+					<h3>Wide Variety</h3>
+					<p>Explore a diverse range of spices sourced from around the globe, ensuring a spice for every
+						palate.</p>
+				</div>
+			</div>
+			<div class="feature-box">
+				<img src="Images/Feature2.jpg" alt="spices">
+				<div class="feature-content">
+					<h3>Quality Assurance</h3>
+					<p>Our spices undergo rigorous quality checks to guarantee freshness, flavor, and authenticity.</p>
+				</div>
+			</div>
+			<div class="feature-box">
+				<img src="Images/Feature3.jpg" alt="spices">
+				<div class="feature-content">
+					<h3>Express Delivery</h3>
+					<p>Swift and secure delivery to bring the essence of world spices directly to your kitchen.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="category">
+		<div class=Category>
+			Categories
+		</div>
+		<main class="categories">
+			<div class="product">
+				<img src="Images/pepper.png" alt="Pepper">
+				<p>Pepper</p>
+			</div>
+			<div class="product">
+				<img src="Images/cardamom.png" alt="Cardamom">
+				<p>Cardamom</p>
+			</div>
+			<div class="product">
+				<img src="Images/tea.png" alt="Tea">
+				<p>Tea</p>
+			</div>
+			<div class="product">
+				<img src="Images/coffee.png" alt="Coffee">
+				<p>Coffee</p>
+			</div>
+			<div class="product">
+				<img src="Images/ginger.png" alt="Ginger">
+				<p>Ginger</p>
+			</div>
+		</main>
+	</section>
+	<script src="script.js"></script>
 </body>
+
 </html>

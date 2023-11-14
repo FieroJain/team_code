@@ -41,6 +41,7 @@ document.getElementById('signupForm').addEventListener('submit', function (e) {
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
+            alert('Signup failed:');
             console.error('Signup failed:', errorCode, errorMessage);
         });
 });

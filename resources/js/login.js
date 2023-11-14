@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
+            alert('Login failed')
             console.error('Signup failed:', errorCode, errorMessage);
         });
 });
